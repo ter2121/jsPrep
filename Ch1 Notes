@@ -1,0 +1,59 @@
+Math.trim()
+  Removes whitespace before and after string characters
+
+Math.floor()
+  Returns largest integer less than or equal to x
+
+Math.ceil() 
+  Rounds up to return the smallest integer greater than or equal to decimal
+
+Number.isInteger()
+  Determine whether value is integer
+
+declare a variable = create a variable
+
+/*
+This time Node uses single quotes; that's the default.
+The backslash, or escape character (\), tells the computer that the next character isn't syntactic, but is part of the string. Escaping a quote character prevents JavaScript from seeing it as the end of the string. Pay attention to the type of slash you use: a forward slash (/) doesn't have any significance inside a string.
+*/
+
+typeof varName
+  Returns variable's data type 
+
+SNUBN 5: String Number Undefined Boolean Null 
+    Undefined: absence of a value
+      decl variable wo an explicit variable
+      function that returns undefined (like console.log)
+    Null: INTENTIONAL absence of value. CANNOT arise implicitly like Undef
+
+% Remainder not Modulo
+
+implicit type coercion. 
+    When using +, if either operand is a string and the other is not, JavaScript coerces the non-string operand to a string; thus, the result is always another string.
+    BUT
+      '5' - 3 = 2 (holds for all other ar operations)
+
+Explicit Coercion  
+    The difference between explicit and implicit coercion is that explicit coercion lets you decide what you want to do, whereas implicit coercion lets the engine choose.
+    Number('2') = 2
+    Number('foo')=NAN
+    parseInt('12')=12
+    parseInt('12xyx')=12  Stops when hits non-number
+    parseInt('3.14')=3
+    String(20)='20'
+
+Expressions
+  An expression is anything that JavaScript can evaluate to a value, even if that value is undefined or null. 
+    When you use the Node or browser console REPL, you type expressions at the > prompt. An expression is anything that JavaScript can evaluate to a value, even if that value is undefined or null. With few exceptions, almost everything you write in JavaScript is an expression.
+    Expressions don't have to involve operators: any value is an expression that evaluates to itself:
+
+Statement
+  The key difference between a statement and an expression is that you can't capture a value from a statement.
+    https://2ality.com/2012/09/expressions-vs-statements.html
+    https://medium.com/launch-school/javascript-expressions-and-statements-4d32ac9c0e74
+
+    Roughly, a statement performs an action. Loops and if statements are examples of statements. A program is basically a sequence of statements (we’re ignoring declarations here). Wherever JavaScript expects a statement, you can also write an expression. Such a statement is called an expression statement. The reverse does not hold: you cannot write a statement where JavaScript expects an expression. For example, an if statement cannot become the argument of a function. 
+
+
+MDN vs ECMA
+  MDN doesn't include assignment (w=3) or function calls (console.log())

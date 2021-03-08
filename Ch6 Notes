@@ -1,0 +1,30 @@
+For Loop
+  The sole difference between the two loops (For/While) is the scope of any variables declared by the initialization clause. 
+      In the while statement, the scope includes the code that surrounds the loop; in the for statement, the scope is the for statement and its body.
+        1. for (initialization; condition; increment) {
+              // loop body
+            }
+      COMPARE
+        2. initialization;
+            while (condition) {
+              // loop body
+              increment;
+            }
+  ## All 3 components of a FOR loop are optional
+  
+Continue
+  Continue helps us to jump over a certain case and move to the next iteration
+      If we can write looping logic without continue, why bother using it at all? You don't have to use continue, of course, but it often leads to a more elegant solution to a problem. Without continue, your loops get cluttered with nested conditional logic.
+  You can rewrite a loop that uses continue with a negated if conditional.
+
+If + Block
+  Earlier, we said that you should always use blocks with if statements. A common exception to this rule occurs when using a continue, break, or return statement as the if clause. When changing the flow with these three statements, the single-line version of the if statement can make your code easier to read.
+
+Array Iteration
+  forEach is preferred by most JavaScript programmers prefer to loop over arrays
+    One feature of JavaScript that sets it apart from most other languages is that it has first-class functions. That means that functions are values: you can assign them to variables, pass them around as arguments to other functions, and even use them as return values in other functions. In our example, we're passing the anonymous function as an argument to forEach.
+
+Recursion
+  Recursive functions are functions that call themselves. 
+    Such code doesn't look much like a loop, but there's a close relationship between loops and recursion. The relationship is close enough that we say that recursion is another way to create loops in JavaScript. h
+

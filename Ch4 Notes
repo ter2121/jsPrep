@@ -1,0 +1,88 @@
+Functions
+
+You'll often have some code that you need to execute multiple times in a program. What can you do?
+  One option is to use loops, but not always helpful. Instead, most languages have a feature called procedures. 
+    In JavaScript, we call these procedures functions.
+
+Arguments vs parameters
+  In the definition of a function, the names between parentheses are called parameters. The arguments are the values of those parameters.
+    Functions are called by typing their name and providing some optional values that we call arguments.  
+      Arguments let you pass data from outside the function's scope into the function so it can access the data. 
+        If the function definition doesn't need access to outside data, you don't need any arguments.
+  Function names and parameters are both considered variable names in JavaScript. 
+    Parameters, in particular, are local variables; they are only defined locally, within the body of the function.
+
+The local variable names between parenthesis (()) are properly called parameters, not arguments. 
+  Arguments are the values you pass into the function for each of those parameters. 
+    The parameter values inside the function are also called arguments. 
+    You can think of parameters as placeholders, while arguments refer to the values that get stored in the placeholders.
+         function add(left, right) { // left & right are parameters here
+            let sum = left + right;   // left & right are arguments here
+            return sum;
+          }
+            let sum = add(3, 6); // 3 and 6 are arguments
+
+Return Values
+  All JavaScript function calls evaluate to a value. By default, that value is undefined; this is the implicit return value of most JavaScript functions. 
+    However, when you use a return statement, you can return a specific value from a function. This is an explicit return value. Outside of the function, there is no distinction between implicit and explicit return values, but it's important to remember that all functions return something unless they raise an exception, even if they don't execute a return statement.
+
+Caller 
+  JavaScript uses the return statement to return a value to the code that called the function: the caller. If you don't specify a value, it returns undefined. Either way, the return statement causes the function to stop running and returns control to the caller.
+    Predicates
+      Functions that always return a boolean value, i.e., true or false, are called predicates. You will almost certainly encounter this term in future readings and videos, so commit it to memory.
+
+Global variables
+  Global variables have a global scope, which means that they are available everywhere within a program. 
+    Any variable declared inside a function or block is a local variable - everything else is a global variable.
+
+  We can reassign global variables from inside a function:
+         let greetingMessage = "Good Morning!";
+
+          function greetPeople() {
+            console.log(greetingMessage);}
+
+          function changeGreetingMessage(newMessage) {
+            greetingMessage = newMessage;}
+
+          changeGreetingMessage("Good Evening");
+          greetPeople(); // => 'Good Evening'
+
+Functions vs. Methods
+  Method invocation occurs when you prepend a variable name or value followed by a period (.) to a function invocation,
+    e.g. 'xyzzy'.toUpperCase(). 
+  We call such functions methods. 
+    There is no easy way to determine whether you need to use a function or method call for any given function. You must read the documentation.
+
+Mutation
+  Primitive values are immutable. That means their values never change: operations on immutable values always return new values. 
+
+  Operations on mutable values (arrays and objects) may or may not return a new value and may or may not mutate data.
+      One non-obvious point here is that mutation is a concern when dealing with arrays and objects, but not with primitive values like numbers, strings, and booleans. 
+
+Function Composition (Combining Functions)
+  Use a function call as an argument passed to another function
+    Canonical: 
+      console.log(add(20, 45)); // => 65
+
+First Class Functions
+  JavaScript functions are first-class functions. The key feature of first-class functions is that you can treat them like any other value. In fact, all JavaScript functions are objects. Thus, you can assign them to variables, pass them as arguments to other functions, and return them from a function call. 
+
+3 Ways to Define functions
+  1. FN Declaration
+      greetPeople();
+      function greetPeople() {
+      console.log("Good Morning!");}
+          In JavaScript, we call a function definition that looks like that a function declaration. A notable property of function declarations is that you can call the function before you declare it. We'll learn why that is in the Core Curriculum; for now, all you need to know is that you don't have to declare functions before calling them.
+  2. FN Expression
+      let greetPeople = function () {
+      console.log("Good Morning!");}
+      greetPeople();
+          since we're saving it to a variable, it's a function expression instead. Function expressions have one key difference from a function declaration: you cannot invoke a function expression before it appears in your program.
+      ** Any function definition that doesn't have the word function at the very beginning of a statement is a function expression. Even wrapping what looks like a function declaration in parentheses creates a function expression.
+  3. Arrow Function
+      let add = (a, b) => a + b;
+          Note the lack of a return statement. 
+          We can omit it in arrow functions when and only when the function body contains a single expression (the expression may have subexpressions, but the entire expression must evaluate to a single value).
+
+Call Stack
+  https://www.youtube.com/watch?v=W8AeMrVtFLY
